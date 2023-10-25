@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Google Colab Keep-Alive",
+    "version": "1.0",
+    "description": "Automatically clicks the screen every 60 seconds to keep Google Colab sessions alive.",
+    
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16-2.png"
+      }
+    },
+    
+    "permissions": ["activeTab", "notifications"],
+    
+    "background": {
+      "service_worker": "background.js"
+    },
+    
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["background.js"]
+      }
+    ]
+  }
+  
